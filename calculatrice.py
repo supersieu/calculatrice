@@ -7,5 +7,9 @@ def cal_1_input(char):
     return val
 
 
-def cal_2_input(char):
+def cal_2_input_ide(char):
     return cal_1_input(char[0])*2
+
+
+def cal_n_input_ide(char):
+    return cal_1_input(char[0])*len(char)
