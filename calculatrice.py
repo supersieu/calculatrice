@@ -14,8 +14,21 @@ def cal_2_input_ide(char):
 def cal_n_input_ide(char):
     return cal_1_input(char[0])*len(char)
 
+
 def cal_n_input(char):
     somme=0
     for i in range(len(char)):
         somme = somme+cal_1_input(char[i])
+    return somme
+
+
+def cal_n_input_sous(char):
+    somme = 0
+    convert = 0
+    for i in range(len(char)-1):
+        if cal_1_input(char[i])<cal_1_input(char[i+1]):
+            convert = cal_1_input(char[i+1])-cal_1_input(char[i])
+        else:
+            convert = cal_1_input(char[i])
+        somme = somme+convert
     return somme
