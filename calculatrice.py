@@ -6,3 +6,6 @@ def cal_1_input(char):
             val = list_char[i][1]
     return val
 
+
+def cal_2_input(char):
+    return cal_1_input(char[0])*2
