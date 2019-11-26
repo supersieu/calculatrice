@@ -17,3 +17,9 @@ def test_cal_n_input_ide():
     assert calculatrice.cal_n_input_ide("IIIIII") == 6
     assert calculatrice.cal_n_input_ide("VVVV") == 20
     assert calculatrice.cal_n_input_ide("MMM") == 3000
+
+def test_cal_n_input():
+    assert calculatrice.cal_n_input("MDCLXVI") == 1666
+    assert calculatrice.cal_n_input("LXXVI") == 76
+
+
