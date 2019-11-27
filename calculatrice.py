@@ -72,23 +72,27 @@ def plus(nombre_1, nombre_2):
 
 def convertir_1_c(nombre_decimal):
     list_char = [["I", 1], ["V", 5], ["X", 10], ["L", 50], ["C", 100], ["D", 500], ["M", 1000]]
+    char=""
     for i in range(len(list_char)):
         if list_char[i][1] == nombre_decimal:
             char = list_char[i][0]
     return char
 
 
-def coef_chif(nombre_dec):
-    n=0
-    while nombre_dec != 0:
-        nombre_dec=nombre_dec//10
-        n=n+1
-    return n-1
-
-def
-
 
 def convertir(nombre_dec):
-    list=[["I", 1],["II", 2], ["III", 3], ["IV", 4], ["V", 5], ["VI", 6], ["VII",7], ["VIII", 8],["IX",9],["X",10]]
-    l=[]
-    while nombre_dec!=0:
+    list = [["I", 1],["II", 2], ["III", 3], ["IV", 4], ["V", 5], ["VI", 6], ["VII",7], ["VIII", 8],["IX",9],["X",10]]
+    coef = 0
+    l = ""
+    while nombre_dec != 0:
+        dernier = nombre_dec % 10
+        nombre_dec=nombre_dec//10
+        if dernier!=0:
+            char = list[dernier-1][0]
+            longueur = len(char)
+            for i in reversed(range(longueur)):
+                val = cal_1_input(char[i])
+                val = val * 10**coef
+                l = convertir_1_c(val) + l
+        coef = coef+1
+    return l

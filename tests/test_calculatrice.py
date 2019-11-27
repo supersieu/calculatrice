@@ -65,9 +65,8 @@ def test_convertir_1_c():
     assert calculatrice.convertir_1_c(500) == "D"
     assert calculatrice.convertir_1_c(1000) == "M"
 
-
-def test_coef_chif():
-    assert calculatrice.coef_chif(1900)==3
-    assert calculatrice.coef_chif(190) == 2
-    assert calculatrice.coef_chif(19) == 1
-    assert calculatrice.coef_chif(1) == 0
+def test_convertir():
+    assert calculatrice.convertir(1944) == "MCMXLIV"
+    assert calculatrice.convertir(2006) == "MMVI"
+    assert calculatrice.convertir(4) == "IV"
+    assert calculatrice.convertir(1945) == "MCMXLV"
